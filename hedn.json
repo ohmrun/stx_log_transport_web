@@ -1,0 +1,77 @@
+{
+  "version": "1",
+  "build": {
+    "-D": [
+      "no-deprecation-warnings"
+  ],
+    "-lib": [
+      "tink_core",
+      "stx_log",
+      "stx_pico",
+      "datura",
+      "stig",
+      "console.hx"
+    ],
+    "-cp": [
+      "src/main/haxe"
+    ],
+    "unit": {
+      "--macro": ["include('stx.log',true"],
+      "interp": {
+        "--macro": [
+          "include('sys',true)"
+        ],
+        "--interp": true
+      }
+    },
+    "hashlink" : {
+      "--macro": [
+        "include('stx.Pico',true)"],
+      "--main": "stx.pico.Test",
+      "--hl": "build/hashlink/main.hl"
+    },  
+    "test": {
+      "-cp": [
+        "src/test/haxe"
+      ],
+      "-lib": [
+        "stx_test",
+        "stx_log"],
+      "--main": "stx.pico.Test",
+      "interp": {
+        "--interp": true
+      },
+      "hashlink": {
+        "--verbose" : true,
+        "--main": "stx.pico.Test",
+        "--hl": "build/test/hl/main.hl"
+      },
+      "neko": {
+        "--main" : "stx.pico.Test",
+        "--neko" : "build/test/hl/neko.n"
+      },
+      "js": {
+        "-D": [
+          "js-unflatten"
+        ],
+        "--js": "build/test/js/main.js"
+      },
+      "cpp": {
+        "--cpp": "dist/test/cpp"
+      },
+      "cs" : {
+        "-D" : ["erase-generics"],
+        "--cs": "build/test/cs"
+      }
+    },
+    "server": {
+      "--main"  : "stx.log.transport.web.Server", 
+      "--js"    : "build/server/main.js", 
+      "--cmd"   : "cp resources/index.html build/server"
+    },
+    "client": {
+      "--main"  : "stx.log.transport.web.Client", 
+      "--interp" : true
+    }
+  } 
+}

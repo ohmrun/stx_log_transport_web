@@ -1,0 +1,10 @@
+--define no-deprecation-warnings
+--library tink_core
+--library stx_log
+--library stx_pico
+--library datura
+--library stig
+--library console.hx
+--class-path src/main/haxe
+--main stx.log.transport.web.Client
+--interp 

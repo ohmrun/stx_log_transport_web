@@ -1,0 +1,20 @@
+{
+  "description" : "",
+  "tags" : [ "cross", "functional" ],
+  "license" : "MIT",
+  "name" : "stx_pico",
+  "releasenote" : "",
+  "contributors" : [ "0b1kn00b" ],
+  "url" : "https://github.com/ohmrun/stx_log_transport_web",
+  "classPath" : "src/main/haxe",
+  "version" : "0.1.0",
+  "dependencies" : {
+    "tink_core" : "", 
+    "stx_pico" : "",
+    "stig" : "",
+    "datura" : "",
+    "stx_log" : "",
+    "stx_coroutine" : "",
+    "console.hx"    : ""
+  }
+}
